@@ -1,0 +1,15 @@
+from cryptography.fernet import Fernet
+
+# Generate a key
+key = Fernet.generate_key()
+
+# Initialize the Fernet symmetric encryption cipher with the generated key
+cipher_suite = Fernet(key)
+
+# Text to be encrypted
+plaintext = b"Hello, this is a secret message."
+
+# Encrypt the plaintext
+cipher_text = cipher_suite.encrypt(plaintext)
+
+print("Encrypted:", cipher_text)
